@@ -20,9 +20,7 @@ This project explores a dataset of police-recorded crime data to analyze crime t
    - Examining trends over time
    - Exploring relationships between features
    - Identifying potential outliers and anomalies
-     
-   ![Police Recorded Crime Analytics Report](img/Police-Recorded-Crime-Analytics-Report.png)
-
+       
 3. **SQL Queries**
    - Creating a SQL database for interactive querying
    - Performing various SQL queries to extract specific information
@@ -62,3 +60,5 @@ This project explores a dataset of police-recorded crime data to analyze crime t
 - sklearn
 - xgboost
 - sqlite3
+
+ ![Police Recorded Crime Analytics Report](img/Police-Recorded-Crime-Analytics-Report.png)
