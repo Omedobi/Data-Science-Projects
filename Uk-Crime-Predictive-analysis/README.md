@@ -20,7 +20,8 @@ This project explores a dataset of police-recorded crime data to analyze crime t
    - Examining trends over time
    - Exploring relationships between features
    - Identifying potential outliers and anomalies
-     ![Tableau viz](img/Police Recorded Crime Analytics Report.png)
+     
+   ![Police Recorded Crime Analytics Report](img/Police Recorded Crime Analytics Report.png)
 
 3. **SQL Queries**
    - Creating a SQL database for interactive querying
