@@ -4,7 +4,8 @@ This repository contains code for predicting cardiovascular disease using machin
 
 ### Data Description
 
-The dataset used for this project contains information related to various attributes such as age, gender, blood pressure, cholesterol level, chest pain type, etc. A detailed description of the attributes can be found in the image file `attribute_information.png`.
+The dataset used for this project contains information related to various attributes such as age, gender, blood pressure, cholesterol level, chest pain type, etc. A detailed description of the attributes can be found in the image file 
+`Cardiovascular Disease Prediction/img/attribute_information.png`.
 
 ### Data Preprocessing
 
