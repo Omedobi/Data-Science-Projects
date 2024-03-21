@@ -1,3 +1,5 @@
+![Heart](img/cardiovascular.jpg)
+
 # Cardiovascular Disease Prediction
 
 This repository contains code for predicting cardiovascular disease using machine learning algorithms. It includes data preprocessing, exploratory data analysis (EDA), model selection, hyperparameter tuning, model training, evaluation, and performance reporting.
