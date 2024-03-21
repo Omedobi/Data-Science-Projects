@@ -13,7 +13,7 @@ This repository contains code for analyzing and predicting the adsorption effici
 
 3. **Feature Engineering**: The repository demonstrates feature engineering techniques to prepare the data for modeling. This involves splitting the data into input features and target variables, and performing outlier removal using Z-score.
 
-4. **Modeling**: XGBoost regression models are trained to predict the adsorption efficiency of activated carbon for each heavy metal contaminant based on the experimental parameters. Hyperparameter tuning is performed using Bayesian optimization to optimize model performance.
+4. **Modeling**: XGBoost regression and Random Forest Regression models were trained to predict the adsorption efficiency of activated carbon for each heavy metal contaminant based on the experimental parameters. Hyperparameter tuning is performed using Bayesian optimization and GridSearchCV to optimize model performance.
 
 5. **Model Evaluation**: The trained models are evaluated using metrics such as mean squared error (MSE), mean absolute error (MAE), and R-squared (R2) score to assess their predictive performance.
 
@@ -21,22 +21,49 @@ This repository contains code for analyzing and predicting the adsorption effici
 
 # Model Evaluation
 
-**RandomForest Regression model**
+**XGB Regression Model Evaluation**
+The code evaluates the performance of the XGB regression models by computing several evaluation metrics, including Mean Squared Error (MSE), Mean Absolute Error (MAE), and R-squared (R²) score for each dataset. These metrics provide insights into how well the models are performing in predicting the target variables.
+
+### Steps:
+
+1. Import necessary libraries for evaluation metrics from `sklearn`.
+2. Calculate evaluation metrics (MSE, MAE, R²) for each dataset using the trained XGB regression models.
+3. Print the evaluation results for each dataset.
+4. Compile evaluation metrics into a DataFrame for better visualization.
+
+### XGB Regression Feature Importances and SHAP Value
+
+The code also analyzes the feature importances of the input variables in predicting adsorption efficiency for each heavy metal contaminant using XGB regression models. Additionally, it utilizes SHAP (SHapley Additive exPlanations) values to explain the output of the models.
+
+### Steps:
+
+1. Calculate feature importances for each dataset's XGB regression model.
+2. Sort the features based on their importances.
+3. Visualize the feature importances using bar plots for each dataset.
+4. Plot Actual vs Predicted values to visually inspect the performance of the models.
+5. Calculate SHAP values and generate summary plots for each dataset to understand the impact of features on model predictions.
+
+### Time Taken for SHAP Value Calculation
+
+The code also measures the time taken to compute SHAP values for each dataset using the XGB regression models. This provides insights into the computational efficiency of the SHAP value calculation process.
+
+
+**RandomForest Regression model Evaluation**
 
 This code evaluates the performance of RandomForest regression models trained on different datasets (`temp_df`, `time_df`, `ads_df`, `pH_df`). The evaluation includes calculating Mean Squared Error (MSE), Mean Absolute Error (MAE), and R-squared (R²) score for each dataset. The evaluation metrics help assess how well the models are performing in predicting the target variables.
 
-## Steps:
+### Steps:
 
 1. Import necessary libraries for evaluation metrics from sklearn.
 2. Calculate evaluation metrics (MSE, MAE, R²) for each dataset using the trained RandomForest regression models.
 3. Print the evaluation results for each dataset.
 4. Compile evaluation metrics into a DataFrame for better visualization.
 
-# Features Importance and Shap value
+## Features Importance and Shap value
 
 This part of the code analyzes the importance of features in predicting the target variables using the RandomForest regression models. It also utilizes SHAP (SHapley Additive exPlanations) values to explain the output of the models.
 
-## Steps:
+### Steps:
 
 1. Calculate feature importances for each dataset's RandomForest regression model.
 2. Sort the features based on their importances.
@@ -44,7 +71,7 @@ This part of the code analyzes the importance of features in predicting the targ
 4. Plot Actual vs Predicted values to visually inspect the performance of the models.
 5. Calculate SHAP values and generate summary plots for each dataset to understand the impact of features on model predictions.
 
-# Evaluation Results
+## Evaluation Results
 
 - The evaluation metrics provide insights into the performance of the RandomForest regression models on different datasets.
 - Feature importance analysis helps identify which features are crucial for predicting the target variables.
