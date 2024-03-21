@@ -1,4 +1,6 @@
- **Crime Prediction Analysis**
+![Crime-scene](img/uk-crime.jpg)
+
+**Crime Prediction Analysis**
 
 **Overview**
 
