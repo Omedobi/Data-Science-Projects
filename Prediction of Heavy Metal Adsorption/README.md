@@ -1,4 +1,4 @@
-# Readme Description
+
 ![Waste-water](img/waste_water.jpg)
 
 ## PREDICTION OF HEAVY METALS ADSORPTION ON ACTIVATED CARBON FROM COCONUT SHELLS
