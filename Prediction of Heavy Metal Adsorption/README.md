@@ -86,7 +86,7 @@ These analyses collectively aid in understanding the model's behavior and identi
 
 **Run the Code**: Navigate to the cloned repository directory and run the Python scripts to execute the analysis and modeling steps.
 
-Feel free to contribute to this repository by opening issues or submitting pull requests. If you have any questions or suggestions, please contact [Email](mailto:ikennaanywuike@gmail.com).
+Feel free to contribute to this repository by opening issues or submitting pull requests. If you have any questions or suggestions, please contact me by [Email](mailto:ikennaanywuike@gmail.com).
 
 ### License
 
