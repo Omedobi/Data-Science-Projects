@@ -1,0 +1,5 @@
+#Install this as to read the ods file through excel in pandas
+odfpy
+pyarrow==14.0.1
+sqlalchemy sql pymysql
+sqlite3
