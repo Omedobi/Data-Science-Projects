@@ -1,3 +1,4 @@
+![loan-approval](img/loan-jpg.jpg)
 
 ## Loan Approval Prediction Model
 
