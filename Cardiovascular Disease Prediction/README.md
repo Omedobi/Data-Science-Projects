@@ -32,8 +32,7 @@ The models are trained on the training data and evaluated using performance metr
 
 ### Conclusion
 
-The project concludes with a summary of model performance across different algorithms. This summary helps in identifying the most effective model for predicting cardiovascular disease based on the provided dataset.
+Based on the metrics, visualizations, and analysis provided, the `Random Forest Classifier` emerges as the preferred machine learning model for classifying patients cardiovascular disease status. This conclusion is drawn from its higher accuracy of `80%`, compared to `77` and `79%` for both the `Decision Tree Classifier` and the `XGBoost Classifier`. Consequently, the `Random Forest Classifier` outperformed the other models, demonstrating superior predictive capabilities in this scenario. This summary helps in identifying the most effective model for predicting cardiovascular disease based on the provided dataset.
 
 For running the code, make sure to install the required packages listed in `requirements.txt` using the command `pip install -r requirements.txt`.
 
-Feel free to explore the code and experiment with different algorithms and hyperparameters to further improve model performance.
