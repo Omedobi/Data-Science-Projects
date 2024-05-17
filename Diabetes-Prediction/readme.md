@@ -29,3 +29,7 @@ The performance of each model was assessed using various evaluation metrics, inc
 After thorough analysis and evaluation, the `XGBoost Classifier` emerged as the top-performing model, achieving an impressive accuracy of `77%`. This model demonstrated superior predictive capabilities compared to the `Logistic Regression`, which achieved accuracies of `74%`. The XGBoost Classifier is therefore recommended for predicting patients diabetes status in this scenario.
 
 for running the code, make sure to install the required packages listed in the requirements.txt using the command `pip install -r requirements.txt`
+
+## Contact-Me:
+[![Email](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ikennaanyawuike@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/anyawuike-ikenna)
