@@ -36,3 +36,6 @@ Based on the metrics, visualizations, and analysis provided, the `Random Forest 
 
 For running the code, make sure to install the required packages listed in `requirements.txt` using the command `pip install -r requirements.txt`.
 
+## Contact-Me:
+[![Email](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ikennaanyawuike@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/anyawuike-ikenna)
