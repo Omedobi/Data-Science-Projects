@@ -9,6 +9,7 @@ from sklearn.model_selection import train_test_split
 # def load_data():
 #     data = pd.read_csv('data\diabetes.csv')
 #     return data
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 @st.cache_resource
 def load_models():
@@ -30,7 +31,7 @@ def load_models():
 log_model, xgb_model = load_models()
 
     
-log_model, xgb_model = load_models()
+# log_model, xgb_model = load_models()
 
 # Define the user interface
 st.title("Diabetes Prediction Application")
