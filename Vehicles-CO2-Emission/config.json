@@ -1,0 +1,10 @@
+{
+    "model_paths":{
+        "anomaly": "C:/Users/admin/Documents/Conda files/Data Science Projects/CO2-Emission/saved_models/iforest_model.pkl",
+        "cluster": "C:/Users/admin/Documents/Conda files/Data Science Projects/CO2-Emission/saved_models/Agglo-cluster_model.pkl",
+        "regression": "C:/Users/admin/Documents/Conda files/Data Science Projects/CO2-Emission/saved_models/xgb_model.pkl",
+        "preprocessor": "C:/Users/admin/Documents/Conda files/Data Science Projects/CO2-Emission/saved_models/preprocessor.pkl"
+    },
+
+    "test_data_path": ""
+}

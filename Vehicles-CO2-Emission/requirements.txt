@@ -1,0 +1,11 @@
+pandas==2.0.0
+seaborn
+matplotlib
+scikit-learn
+numpy
+pyarrow
+pycaret==3.3.2
+scikit-optimize
+umap
+json5
+simplejson
