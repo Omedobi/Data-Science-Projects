@@ -6,6 +6,8 @@ numpy
 pyarrow
 pycaret==3.3.2
 scikit-optimize
-umap
-json5
-simplejson
+umap-learn
+sqlalchemy
+sql
+db-sqlite3
+ipython-sql
