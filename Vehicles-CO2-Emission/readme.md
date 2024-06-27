@@ -1,9 +1,7 @@
-⚡⚡⚡-------------⚡⚡⚡Welcome to Vehicle Manufacturer CO2 Emission Project ⚡⚡⚡---------------⚡⚡⚡
+⚡⚡⚡-----⚡⚡⚡Welcome to Vehicle Manufacturer CO2 Emission Project ⚡⚡⚡-----⚡⚡⚡
 
 **Note: This project is currently under construction. Stay tuned for updates.**
-┏━━━━━━━━━━━━━━━━━━┓
 ┃🚧 UNDER CONSTRUCTION 🚧  ┃
-┗━━━━━━━━━━━━━━━━━━┛
 
 
 
