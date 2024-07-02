@@ -41,6 +41,7 @@ def fetch_data_from_db(columns):
     columns_escaped = [f"`{col}`" for col in columns]
     query = f"SELECT {','.join(columns_escaped)} FROM bard_data"
     data = pd.read_sql_query(query, conn)
+    data.columns = columns
     return data
 
 def setup_sidebar():
@@ -78,7 +79,7 @@ def display_analysis(option, user_data):
     elif option == 'Clustering':
         clustering(user_data_processed)
     elif option == 'Prediction':
-        prediction(user_data_processed)
+        prediction(user_data_processed, feature_list)
 
 def anomaly_detection(user_data):
     """Function to handle anomaly detection."""
@@ -102,10 +103,17 @@ def clustering(user_data):
     else:
         st.error("Clustering model is not loaded or user data is empty.")
 
-def prediction(user_data):
+def prediction(user_data, feature_list):
     """Function to handle prediction."""
     reg_model = models.get('regression')
     if reg_model and len(user_data) > 0:
+        if reg_model.n_features_in_ != user_data.shape[1]:
+            st.error(f"Feature shape mismatch: Model expects {reg_model.n_features_in_} features, but got {user_data.shape[1]}.")
+            st.write("Features expected:")
+            st.write(feature_list)
+            st.write('Features received:')
+            st.write(user_data.columns.tolist())
+            return
         predictions = reg_model.predict(user_data)
         user_data['CO2 Emission Prediction'] = predictions
         st.write('CO2 Emission Predictions:')
@@ -140,4 +148,4 @@ if __name__ == "__main__":
     try:
         main()
     finally:
-        conn.close()  # Ensure the connection is closed when the app exits
+        conn.close()  # close the database connection

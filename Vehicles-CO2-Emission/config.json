@@ -7,7 +7,7 @@
     },
     "data_path": "C:/Users/admin/Documents/Conda files/Data Science Projects/CO2-Emission/data/vehicle-analysis.pq",
     "features": {
-        "anomaly": [
+        "Anomaly Detection": [
             "Manufacturer",
             "Model_Year",
             "Regulatory_Class",
@@ -35,7 +35,7 @@
             "Fuel_Delivery_Throttle_Body_Injection",
             "Fuel_Delivery_Other"
         ],
-        "clustering": [
+        "Clustering": [
             "Manufacturer",
             "Model_Year",
             "Regulatory_Class",
@@ -63,10 +63,7 @@
             "Fuel_Delivery_Throttle_Body_Injection",
             "Fuel_Delivery_Other"
         ],
-        "prediction": [
-            "Model_Year",
-            "Regulatory_Class",
-            "Vehicle_Type",
+        "Prediction": [
             "2_Cycle_MPG",
             "Real_World_MPG",
             "Real_World_MPG_City",
@@ -113,6 +110,6 @@
             "7_Gears",
             "8_Gears",
             "9_or_More_Gears"
-        ]
+          ]
     }
 }
