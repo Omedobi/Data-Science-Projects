@@ -1,10 +1,13 @@
 import streamlit as st
+import os
 import pandas as pd
 import logging
 import joblib
 import json
+import pycaret
 import sqlite3
 from sklearn.preprocessing import StandardScaler, LabelEncoder
+
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -47,7 +50,7 @@ def fetch_data_from_db(columns):
 def setup_sidebar():
     """Set up sidebar for user input and configuration."""
     st.sidebar.title('Vehicle Emission Analysis')
-    return st.sidebar.selectbox('Select Analysis Type', ('Anomaly Detection', 'Clustering', 'Prediction'))
+    return st.sidebar.selectbox('Select analysis', ('Anomaly Detection', 'Clustering', 'Prediction'))
 
 def preprocess_data(user_data, feature_list):
     """Preprocess user data by encoding categorical variables, scaling and removing duplicates."""
@@ -86,7 +89,8 @@ def anomaly_detection(user_data):
     anom_model = models.get('anomaly')
     if anom_model and len(user_data) > 0:
         predictions = anom_model.predict(user_data)
-        anomalies = user_data[predictions == 1]
+        user_data['Anomalies'] = predictions
+        anomalies = user_data[user_data['Anomalies'] == 1].round(2)
         st.write(f'Number of anomalies detected: {len(anomalies)}')
         st.dataframe(anomalies)
     else:
@@ -120,6 +124,16 @@ def prediction(user_data, feature_list):
         st.dataframe(user_data)
     else:
         st.error("Prediction model is not loaded or user data is empty.")
+        
+def show_visualization():
+    """Function to show visualization options."""
+    st.sidebar.write("Visualization")
+    visualization_option = st.sidebar.selectbox('Show visualization', ('Elbow curve plot', 'Cluster plot'))
+    if st.sidebar.button('Show visualization'):
+        if visualization_option == 'Elbow curve plot':
+            st.image('C:/Users/admin/Documents/Conda files/Data Science Projects/CO2-Emission/image/Elbow-curve-cluster.png', caption='Elbow Curve Plot', use_column_width=True)
+        elif visualization_option == 'Cluster plot':
+            st.image('C:/Users/admin/Documents/Conda files/Data Science Projects/CO2-Emission/image/GMM-cluster.png', caption='Cluster Plot', use_column_width=True)
 
 def main():
     """Main function to orchestrate the app flow."""
@@ -131,18 +145,20 @@ def main():
         st.dataframe(tables)
     
     if st.sidebar.button('Fetch Data from Database'):
-        feature_list = config["features"].get(option,[])
+        feature_list = config["features"].get(option, [])
         if not feature_list:
             st.error(f"Feature list for {option} not found in the configuration")
             return
         
         user_data = fetch_data_from_db(feature_list)
         if not user_data.empty:
-            display_analysis(option, user_data)
+            with st.container():
+                display_analysis(option, user_data)
+                
         else:
             st.warning('No data found in the database.')
-    else:
-        st.warning('Click the button to fetch data from the database.')
+    
+    show_visualization()
 
 if __name__ == "__main__":
     try:
