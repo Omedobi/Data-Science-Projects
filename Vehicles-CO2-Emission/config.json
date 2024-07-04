@@ -110,6 +110,22 @@
             "7_Gears",
             "8_Gears",
             "9_or_More_Gears"
+          ],
+          "EDA":[
+            "Manufacturer", "Model_Year", "Regulatory_Class", "Vehicle_Type", "Production_(000)", 
+            "Production_Share", "2_Cycle_MPG", "Real_World_MPG", "Real_World_MPG_City", "Real_World_MPG_Hwy", 
+            "Real_World_CO2_(g/mi)", "Real_World_CO2_City_(g/mi)", "Real_World_CO2_Hwy_(g/mi)", "Weight_(lbs)", 
+            "Footprint_(sq._ft.)", "Engine_Displacement", "Horsepower_(HP)", "Acceleration_(0_60_time_in_seconds)", 
+            "HP/Engine_Displacement", "HP/Weight_(lbs)", "Ton_MPG_(Real_World)", "Drivetrain_Front", "Drivetrain_4WD", 
+            "Drivetrain_Rear", "Transmission_Manual", "Transmission_Automatic", "Transmission_Lockup", 
+            "Transmission_CVT_(Hybrid)", "Transmission_Other", "Fuel_Delivery_Carbureted", 
+            "Fuel_Delivery_Gasoline_Direct_Injection_(GDI)", "Fuel_Delivery_Port_Fuel_Injection", 
+            "Fuel_Delivery_Throttle_Body_Injection", "Fuel_Delivery_Other", "Powertrain_Diesel", 
+            "Powertrain_Electric_Vehicle_(EV)", "Powertrain_Plug_in_Hybrid_Electric_Vehicle_(PHEV)", 
+            "Powertrain_Fuel_Cell_Vehicle_(FCV)", "Powertrain_Other_(incl._CNG)", "Powertrain_Gasoline_Hybrid", 
+            "Powertrain_Gasoline", "Turbocharged_Engine", "Stop/Start", "Cylinder_Deactivation", "Multivalve_Engine", 
+            "Variable_Valve_Timing", "Average_Number_of_Gears", "Transmission_CVT_(Non_Hybrid)", "4_or_Fewer_Gears", 
+            "5_Gears", "6_Gears", "7_Gears", "8_Gears", "9_or_More_Gears", "Mean_CO2_(g/mi)", "Mean_Real_World_MPG"
           ]
     }
 }

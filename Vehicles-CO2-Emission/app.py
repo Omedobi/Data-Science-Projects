@@ -33,23 +33,28 @@ def load_models():
 
 models = load_models()
 
-# Database connection is initialized once and reused
 def get_db_connection():
+    """Get the database connection"""
     return sqlite3.connect('C:/Users/admin/EmissionDatabase.db')
 
 def fetch_data_from_db(columns):
-    conn = get_db_connection()
-    columns_escaped = [f"`{col}`" for col in columns]
-    query = f"SELECT {','.join(columns_escaped)} FROM bard_data"
-    try:
-        data = pd.read_sql_query(query, conn)
-        data.columns = columns
-        return data
-    finally:
-        conn.close()
+    """Fetch data from the database based on provided feature list. """
+    with get_db_connection() as conn:
+        columns_escaped = [f"`{col}`" for col in columns]
+        query = f"SELECT {','.join(columns_escaped)} FROM bard_data"
+        try:
+            data = pd.read_sql_query(query, conn)
+            return pd.DataFrame(data)
+        except pd.io.sql.DatabaseError as e:
+            logging.error(f"SQL Error: {e}")
+            st.error(f'Failed to fetch data. Please check the database and query.')
 
 def preprocess_data(user_data, feature_list):
     """Preprocess user data by encoding categorical variables, scaling and removing duplicates."""
+    if user_data.empty:
+        st.warning('No data to preprocess.')
+        return pd.DataFrame()
+    
     label_encoders = {}
     for column in user_data.select_dtypes(include=['object']).columns:
         le = LabelEncoder()
@@ -57,27 +62,31 @@ def preprocess_data(user_data, feature_list):
         label_encoders[column] = le 
 
     scaler = StandardScaler()
-    user_data = user_data[feature_list].drop_duplicates()
+    user_data = user_data.loc[:, feature_list].drop_duplicates()
     user_data_scaled = scaler.fit_transform(user_data)
     return pd.DataFrame(user_data_scaled, columns=user_data.columns)
 
 def setup_sidebar():
     """Set up sidebar for user input and configuration."""
     st.sidebar.title('Vehicle Emission Analysis')
-    return st.sidebar.selectbox('Select analysis', ('Anomaly Detection', 'Clustering', 'Prediction'))
-
+    analysis_type = st.sidebar.selectbox('Select analysis', ('Anomaly Detection', 'Clustering', 'Prediction'))
+    return analysis_type
 
 def display_analysis(option, user_data):
     """Display the selected analysis type and handle user data."""
-    if not user_data.empty:
-        feature_list = config["features"].get(option)
-        user_data_processed = preprocess_data(user_data, feature_list)
-        if option == 'Anomaly Detection':
-            anomaly_detection(user_data_processed)
-        elif option == 'Clustering':
-            clustering(user_data_processed)
-        elif option == 'Prediction':
-            prediction(user_data_processed, feature_list)
+    if user_data.empty:
+        st.error('No data provided for analysis')
+        return
+    
+    feature_list = config["features"].get(option)
+    user_data_processed = preprocess_data(user_data, feature_list)
+    if option == 'Anomaly Detection':
+        anomaly_detection(user_data_processed)
+    elif option == 'Clustering':
+        clustering(user_data_processed)
+    elif option == 'Prediction':
+        prediction(user_data_processed, feature_list)
+
 
 def anomaly_detection(user_data):
     """Function to handle anomaly detection."""
@@ -120,16 +129,27 @@ def prediction(user_data, feature_list):
     else:
         st.error("Prediction model is not loaded or user data is empty.")
         
-def perform_eda(user_data):
+def perform_eda():
     """Perform EDA using the visualization script"""
-    eda = EDA(user_data)
+    EdaList = config['features'].get('EDA', [])
+    if not EdaList:
+        st.error('No feature list defined for EDA in the configuration')
+        return
+    data = fetch_data_from_db(EdaList)
+    if data.empty:
+        st.error('No data available for EDA')
+        return
+    
+    eda = EDA(data)
     eda.show_plots()
        
 def show_visualization(option):
     """Function to show visualization options."""
-    if option in ['Clustering', 'Prediction']:
+    if option in ['Anomaly Detection', 'Clustering', 'Prediction']:
         st.write(f"### {option} Visualizations")
-        if option == 'Clustering':
+        if option == 'Anomaly Detection':
+            st.image('C:/Users/admin/Documents/Conda files/Data Science Projects/CO2-Emission/image/t-SNE (3d) Dimension Plot.png', caption='Elbow Curve Plot', use_column_width=True)
+        elif option == 'Clustering':
             st.image('C:/Users/admin/Documents/Conda files/Data Science Projects/CO2-Emission/image/Elbow-curve-cluster.png', caption='Elbow Curve Plot', use_column_width=True)
             st.image('C:/Users/admin/Documents/Conda files/Data Science Projects/CO2-Emission/image/GMM-cluster.png', caption='Cluster Plot', use_column_width=True)
         elif option == 'Prediction':
@@ -138,21 +158,26 @@ def show_visualization(option):
 
 def main():
     option = setup_sidebar()
-    if st.sidebar.button('Fetch Data'):
-        feature_list = config["features"].get(option, [])
-        user_data = fetch_data_from_db(feature_list)
-        st.session_state['user_data'] = user_data
-        st.write('Data fetched successfully. Please proceed to the next step.')
-        
-    if 'user_data' in st.session_state:
-        if st.sidebar.button('Perform analysis'):
-            with st.container():
-                display_analysis(option, st.session_state['user_data'])
-                
-        if st.sidebar.button('Perform EDA'):
-            with st.container():
-                perform_eda(st.session_state['user_data'])
-                show_visualization(option)
+    conn = get_db_connection()
+    try:
+        if st.sidebar.button('Fetch Data'):
+            feature_list = config["features"].get(option, [])
+            user_data = fetch_data_from_db(feature_list)
+            st.session_state['user_data'] = user_data
+            st.write('Data fetched successfully. Please proceed to the next step.')
+            
+        if 'user_data' in st.session_state:
+            if st.sidebar.button('Perform analysis'):
+                with st.container():
+                    display_analysis(option, st.session_state['user_data'])
+                    
+            if st.sidebar.button('Perform EDA'):
+                with st.container():
+                    perform_eda()
+                    show_visualization(option)
+    finally:
+        if conn:
+            conn.close()
 
 if __name__ == "__main__":
     main()
