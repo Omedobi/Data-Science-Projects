@@ -1,4 +1,4 @@
-pandas==2.0.0
+pandas
 seaborn
 matplotlib
 scikit-learn
@@ -11,3 +11,7 @@ sqlalchemy
 sql
 db-sqlite3
 ipython-sql
+xgboost
+umap
+plotly
+streamlit

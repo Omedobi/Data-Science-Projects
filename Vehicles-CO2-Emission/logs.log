@@ -207,3 +207,122 @@
 2024-06-19 14:46:23,312:WARNING:C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
   warnings.warn(
 
+2024-07-02 11:48:34,121:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-07-02 11:48:34,122:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-07-02 11:48:34,122:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-07-02 11:48:34,122:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-07-02 11:50:33,906:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 11:51:13,124:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 11:54:28,609:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 11:54:58,316:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 11:56:07,304:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 11:56:31,432:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 11:59:32,993:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 11:59:44,123:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 12:00:50,102:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 12:01:18,991:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 12:01:25,735:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 12:02:00,455:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 12:02:14,209:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 12:02:28,245:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 12:02:41,818:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 12:03:06,748:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 12:03:17,229:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 12:03:36,619:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 12:06:43,082:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 12:11:21,290:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 12:55:09,064:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 12:55:38,450:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 12:57:11,891:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 12:57:17,602:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 12:57:22,173:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 12:58:17,760:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 12:58:21,730:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 13:05:31,573:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 13:06:27,253:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 13:23:23,110:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 14:22:32,216:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 20:22:48,640:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-02 22:27:09,511:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-03 06:04:05,504:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-03 06:54:39,084:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-03 14:22:33,304:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
+2024-07-03 16:28:51,629:WARNING:C:\Users\admin\Documents\Conda files\Data Science Projects\CO2-Emission\myenv\Lib\site-packages\sklearn\base.py:486: UserWarning: X has feature names, but IsolationForest was fitted without feature names
+  warnings.warn(
+
