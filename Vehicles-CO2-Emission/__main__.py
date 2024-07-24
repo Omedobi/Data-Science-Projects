@@ -161,7 +161,10 @@ def clustering(user_data):
 }
         user_data['Cluster'] = predictions
         user_data['Cluster_bin'] = user_data['Cluster'].map(cluster_bin)
-        st.success(f'Cluster results: {user_data["Cluster_bin"].value_counts()}')
+        
+        cluster_count = user_data['Cluster_bin'].value_counts().to_dict()
+        cluster_summary = ", ".join([f"{cluster}: {count}" for cluster, count in cluster_count.items()])
+        st.success(f'Cluster results: \n{cluster_summary}')
         st.dataframe(user_data)
     else:
         st.error("Clustering model is not loaded or user data is empty.")
