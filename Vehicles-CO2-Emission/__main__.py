@@ -151,8 +151,17 @@ def clustering(user_data):
     cluster_model = models.get('cluster')
     if (cluster_model is not None) and (len(user_data) > 0):
         predictions = cluster_model.fit_predict(user_data)
+        
+    # Binning the cluster
+        cluster_bin = {
+    0:'Low Emission',
+    1:'Medium Emission',
+    2:'High Emission',
+    3:'Very High Emission'
+}
         user_data['Cluster'] = predictions
-        st.success('Cluster prediction results:')
+        user_data['Cluster_bin'] = user_data['Cluster'].map(cluster_bin)
+        st.success(f'Cluster results: {user_data["Cluster_bin"].value_counts()}')
         st.dataframe(user_data)
     else:
         st.error("Clustering model is not loaded or user data is empty.")
