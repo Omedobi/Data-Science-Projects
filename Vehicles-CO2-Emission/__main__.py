@@ -79,6 +79,24 @@ def setup_sidebar():
     This report presents an in-depth analysis focused on predicting CO2 emissions, grouping vehicles by their emissions and fuel efficiency, 
     and identifying anomalies in vehicle emissions. I will outline the objectives of each task and explain how they enhance our understanding of vehicle emissions.
 
+    #### Anomaly Detection in Vehicle Emissions
+    This task aims to detect vehicles with unusually high or low CO2 emissions compared to similar vehicles. The specific objectives include:
+    - Identifying outliers in the dataset that may indicate data quality issues, unusual vehicle behavior, or potential regulatory violations.
+    - Highlighting vehicles that significantly deviate from the norm, prompting further investigation and corrective actions.
+    - Ensuring the reliability and accuracy of emissions data, which is critical for regulatory compliance and environmental monitoring.
+
+    Anomaly detection is vital for maintaining data integrity and identifying vehicles that may require special attention due to their deviation from expected performance.
+       
+    #### Clustering Vehicles Based on Emissions and Fuel Efficiency
+    The goal of this task is to group vehicles into clusters based on their CO2 emissions and fuel efficiency metrics. Clustering helps in:
+    - Identifying patterns and similarities among different vehicles.
+    - Classifying vehicles into distinct groups that share common characteristics regarding their emissions and fuel efficiency.
+    - Providing insights into the performance and environmental impact of different vehicle types.
+
+    By clustering vehicles, we can better understand market segments and develop targeted strategies for improvement. 
+    For instance, clusters of high-emission vehicles might be targeted for design overhauls, while low-emission clusters could 
+    highlight successful technologies and practices worth replicating.
+             
     #### Predicting CO2 Emission (Regression)
     The primary goal of this task is to accurately predict the real-world CO2 emissions (grams per mile) of a vehicle. 
     This prediction leverages various vehicle features, including:
@@ -92,23 +110,6 @@ def setup_sidebar():
     setting standards, and enable consumers to make informed choices. Accurate prediction of CO2 emissions is 
     not just a technical challenge but a step towards sustainable mobility.
 
-    #### Clustering Vehicles Based on Emissions and Fuel Efficiency
-    The goal of this task is to group vehicles into clusters based on their CO2 emissions and fuel efficiency metrics. Clustering helps in:
-    - Identifying patterns and similarities among different vehicles.
-    - Classifying vehicles into distinct groups that share common characteristics regarding their emissions and fuel efficiency.
-    - Providing insights into the performance and environmental impact of different vehicle types.
-
-    By clustering vehicles, we can better understand market segments and develop targeted strategies for improvement. 
-    For instance, clusters of high-emission vehicles might be targeted for design overhauls, while low-emission clusters could 
-    highlight successful technologies and practices worth replicating.
-             
-    #### Anomaly Detection in Vehicle Emissions
-    This task aims to detect vehicles with unusually high or low CO2 emissions compared to similar vehicles. The specific objectives include:
-    - Identifying outliers in the dataset that may indicate data quality issues, unusual vehicle behavior, or potential regulatory violations.
-    - Highlighting vehicles that significantly deviate from the norm, prompting further investigation and corrective actions.
-    - Ensuring the reliability and accuracy of emissions data, which is critical for regulatory compliance and environmental monitoring.
-
-    Anomaly detection is vital for maintaining data integrity and identifying vehicles that may require special attention due to their deviation from expected performance.
     """
     st.markdown(f"""
         <div style='height: 400px; overflow-y: scroll; padding: 10px; border: 1px solid #ddd; border-radius: 10px;'>
