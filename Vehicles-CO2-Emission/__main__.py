@@ -142,7 +142,29 @@ def anomaly_detection(user_data):
         predictions = anom_model.predict(user_data)
         user_data['Anomalies'] = predictions
         anomalies = user_data[user_data['Anomalies'] == 1].round(2)
-        st.success(f'Number of anomalies detected: {len(anomalies)}')
+        
+        # Drop specific columns for deviation analysis
+        user_data = user_data.drop(columns=['Manufacturer','ProductionShare','Production'], axis=1)
+        # Calculate the median of each feature
+        medians = user_data.median()
+        # Calculate the absolute deviations from the median for each anomaly
+        deviations = (anomalies.iloc[:, :-3] - medians).abs()
+        # Identify the columns with the max deviations
+        max_deviations_cols = deviations.idxmax(axis=1)
+        # Add the anomalies with the columns where the max deviation occurred
+        anomalies['MaxDeviation'] = max_deviations_cols
+        anomaly_summary = anomalies[['Anomalies','MaxDeviation']]
+        # Count the occurrences of each column where the maximum deviation occurred
+        anomaly_count = anomaly_summary['MaxDeviation'].value_counts().to_dict()
+        # Create the summary string
+        summary = ", ".join([f"{column}: {count}" for column, count in anomaly_count.items()])
+        st.success(
+    f"""
+    Number of anomalies detected: {len(anomalies)}    
+    Anomalies were detected in the following:
+    {summary}
+    """
+)
         st.dataframe(anomalies)
     else:
         st.error("Anomaly detection model is not loaded or user data is empty.")
