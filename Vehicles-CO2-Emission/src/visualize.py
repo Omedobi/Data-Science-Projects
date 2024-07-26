@@ -11,27 +11,25 @@ class EDA:
         """Display descriptive statistics of the DataFrame."""
         st.write('**Descriptive statistics**')
         st.write(self.data.describe())
-
-    def correlation_heatmap(self):
-        """Display correlation heatmap of the DataFrame using Plotly Express."""
-        numeric_data = self.data.select_dtypes(include=['number'])
-        correlation_matrix = numeric_data.corr()
-        fig = px.imshow(correlation_matrix, 
-                        labels=dict(color="Correlation"),
-                        x=correlation_matrix.columns,
-                        y=correlation_matrix.columns,
-                        title="Correlation Heatmap",
-                        color_continuous_scale='Viridis',
-                        zmin=-1, zmax=1,
-                        width=1200, 
-                        height=700
-                        )
+        
+    def Manufacturer_CO2(self):
+        """Bar plot of CO2 Emission by Manufacturer."""
+        carbon_emission = ['AvgCO2(g/mi)','AvgRealWorld_MPG']  
+        carbon_distribution = self.data.groupby('Manufacturer')[carbon_emission].sum().reset_index()
+        fig = go.Figure()
+        for col in carbon_emission:
+            fig.add_trace(go.Bar(
+                x= carbon_distribution['Manufacturer'],
+                y=carbon_distribution[col],
+                name= col
+            ))
+        fig.update_layout(barmode='stack', title='Average CO2 Emission & MPG by Manufacturer')
         st.plotly_chart(fig)
 
     def hist_plot(self, column: str, bins=30):
         """Display histogram of a specified column."""
         
-        fig = px.histogram(self.data, x=column, nbins=bins, title=f'Histogram of {column}')
+        fig = px.histogram(self.data, x=column, nbins=bins, title=f'Distribution of {column}')
         st.plotly_chart(fig)
 
     def scatter_plot(self, x: str, y: str):
@@ -91,11 +89,11 @@ class EDA:
         average_co2_by_transmission = data_melted.groupby('Transmission_Type')['AvgCO2(g/mi)'].mean().reset_index()
         fig = px.bar(average_co2_by_transmission, x='Transmission_Type', y='AvgCO2(g/mi)', title='Average CO2 Emissions by Transmission Type')
         st.plotly_chart(fig)
-
+    
     def show_plots(self):
         """Show all plots for the DataFrame."""
         self.desc_statistics()
-        self.correlation_heatmap()
+        
 
         if 'AvgCO2(g/mi)' in self.data.columns:  
             self.hist_plot('AvgCO2(g/mi)')
@@ -103,8 +101,10 @@ class EDA:
         if 'Horsepower(HP)' in self.data.columns and 'Weight(lbs)' in self.data.columns: 
             self.scatter_plot('Horsepower(HP)', 'Weight(lbs)')
 
+        self.Manufacturer_CO2()
         self.bar_plot_average_hp_by_manufacturer()
         self.pie_chart_vehicle_type_distribution()
         self.stacked_bar_drivetrain_by_manufacturer()
         self.violin_plot_mpg_by_regulatory_class()
         self.bar_plot_co2_by_transmission_type()
+        self.correlation_heatmap()
