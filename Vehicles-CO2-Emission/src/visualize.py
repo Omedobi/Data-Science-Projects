@@ -107,4 +107,4 @@ class EDA:
         self.stacked_bar_drivetrain_by_manufacturer()
         self.violin_plot_mpg_by_regulatory_class()
         self.bar_plot_co2_by_transmission_type()
-        self.correlation_heatmap()
+        

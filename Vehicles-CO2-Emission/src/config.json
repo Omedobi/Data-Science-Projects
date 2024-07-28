@@ -54,8 +54,7 @@
             "Powertrain_Diesel", "Powertrain_ElectricVehicle_(EV)", "Powertrain_PluginHybrid_ElectricVehicle_(PHEV)",
             "Powertrain_FuelCellVehicle(FCV)", "Powertrain_Other_(incl.CNG)", "Powertrain_GasolineHybrid",
             "Powertrain_Gasoline", "TurbochargedEngine", "Stop/Start", "CylinderDeactivation", "MultivalveEngine",
-            "VariableValveTiming", "AverageNumberofGears", "TransmissionCVT(NonHybrid)", "4_or_FewerGears",
-            "5_Gears', '6_Gears", "7_Gears", "8_Gears", "9_or_MoreGears"
+            "VariableValveTiming", "AverageNumberofGears", "TransmissionCVT(NonHybrid)", "4_or_FewerGears","5_Gears", "6_Gears", "7_Gears", "8_Gears", "9_or_MoreGears"
           ],
 
           "EDA": [
