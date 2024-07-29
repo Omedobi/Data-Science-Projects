@@ -70,52 +70,44 @@ def preprocess_data(user_data, feature_list):
 
 def setup_sidebar():
     """Set up sidebar for user input and configuration."""
-    st.title("Analyzing Vehicle Emissions: Predicting, Clustering, and Detecting Anomalies")
+    st.title("Utilizing Machine Learning to Analyze Vehicle Carbon Emissions: Predicting, Clustering, and Detecting Anomalies")
     
-    content = """ 
-    ### Analyzing Vehicle Emissions \n
-    The automotive industry faces growing pressure to minimize its environmental footprint, especially regarding CO2 emissions. 
-    Effective management and comprehension of vehicle emissions are vital for manufacturers, regulators, and consumers. 
-    This report presents an in-depth analysis focused on predicting CO2 emissions, grouping vehicles by their emissions and fuel efficiency, 
-    and identifying anomalies in vehicle emissions. I will outline the objectives of each task and explain how they enhance our understanding of vehicle emissions.
+    content = """
+### Analyzing Vehicle Carbon Emissions
 
-    #### Anomaly Detection in Vehicle Emissions
-    This task aims to detect vehicles with unusually high or low CO2 emissions compared to similar vehicles. The specific objectives include:
-    - Identifying outliers in the dataset that may indicate data quality issues, unusual vehicle behavior, or potential regulatory violations.
-    - Highlighting vehicles that significantly deviate from the norm, prompting further investigation and corrective actions.
-    - Ensuring the reliability and accuracy of emissions data, which is critical for regulatory compliance and environmental monitoring.
+The automotive industry is under increasing pressure to reduce its environmental impact, particularly concerning CO2 emissions. Effective management and understanding of vehicle emissions are crucial for manufacturers, regulators, and consumers. My latest project focuses on this pressing issue, with an in-depth analysis aimed at predicting CO2 emissions, clustering vehicles by their emissions and fuel efficiency, and identifying anomalies in vehicle emissions. Here’s a brief overview of each task and how it enhances our understanding of vehicle emissions.
 
-    Anomaly detection is vital for maintaining data integrity and identifying vehicles that may require special attention due to their deviation from expected performance.
-       
-    #### Clustering Vehicles Based on Emissions and Fuel Efficiency
-    The goal of this task is to group vehicles into clusters based on their CO2 emissions and fuel efficiency metrics. Clustering helps in:
-    - Identifying patterns and similarities among different vehicles.
-    - Classifying vehicles into distinct groups that share common characteristics regarding their emissions and fuel efficiency.
-    - Providing insights into the performance and environmental impact of different vehicle types.
+#### Anomaly Detection in Vehicle Emissions
+The primary goal of this task is to detect vehicles with unusually high or low CO2 emissions compared to similar vehicles. Specific objectives include:
+- Identifying outliers in the dataset, which may indicate data quality issues, unusual vehicle behavior, or potential regulatory violations.
+- Highlighting vehicles that significantly deviate from the norm, prompting further investigation and corrective actions.
+- Ensuring the reliability and accuracy of emissions data, which is critical for regulatory compliance and environmental monitoring.
 
-    By clustering vehicles, we can better understand market segments and develop targeted strategies for improvement. 
-    For instance, clusters of high-emission vehicles might be targeted for design overhauls, while low-emission clusters could 
-    highlight successful technologies and practices worth replicating.
-             
-    #### Predicting CO2 Emission (Regression)
-    The primary goal of this task is to accurately predict the real-world CO2 emissions (grams per mile) of a vehicle. 
-    This prediction leverages various vehicle features, including:
-    - **Weight**: The overall mass of the vehicle.
-    - **Engine Displacement**: The total volume of all the cylinders in the engine.
-    - **Horsepower**: The engine's power output.
-    - **Miles Per Gallon (MPG)**: Fuel efficiency metrics including city, highway, and combined MPG.
+Anomaly detection is crucial for maintaining data integrity and identifying vehicles that may require special attention due to their deviation from expected performance.
 
-    By utilizing these features, the regression model aims to provide insights into the environmental 
-    impact of vehicles. This can help manufacturers design more efficient vehicles, assist regulators in 
-    setting standards, and enable consumers to make informed choices. Accurate prediction of CO2 emissions is 
-    not just a technical challenge but a step towards sustainable mobility.
+#### Clustering Vehicles on Emissions and Fuel Efficiency
+The objective here is to group vehicles into clusters based on their CO2 emissions and fuel efficiency metrics. This task helps in:
+- Identifying patterns and similarities among different vehicles.
+- Classifying vehicles into distinct groups that share common characteristics regarding their emissions and fuel efficiency.
+- Providing insights into the performance and environmental impact of different vehicle types.
+
+By clustering vehicles, we can better understand market segments and develop targeted strategies for improvement. For instance, clusters of high-emission vehicles might be targeted for design overhauls, while low-emission clusters could highlight successful technologies and practices worth replicating.
+
+#### Predicting CO2 Emission (Regression)
+The goal of this task is to accurately predict the real-world CO2 emissions (grams per mile) of a vehicle using various vehicle features, including:
+- **Weight**: The overall mass of the vehicle.
+- **Engine Displacement**: The total volume of all the cylinders in the engine.
+- **Horsepower**: The engine's power output.
+- **Miles Per Gallon (MPG)**: Fuel efficiency metrics, including city, highway, and combined MPG.
+
+By leveraging these features, the regression model aims to provide insights into the environmental impact of vehicles. This can help manufacturers design more efficient vehicles, assist regulators in setting standards, and enable consumers to make informed choices. Accurate prediction of CO2 emissions is not just a technical challenge but a step towards sustainable mobility.
 
     """
     st.markdown(f"""
-        <div style='height: 400px; overflow-y: scroll; padding: 10px; border: 1px solid #ddd; border-radius: 10px;'>
+        <div style='height: 600px; overflow-y: scroll; padding: 10px; border: 1px solid #ddd; border-radius: 10px;'>
             {content}
         """, unsafe_allow_html=True)
-    st.sidebar.title('Analyzing Vehicle Emissions')
+    st.sidebar.title('Analyzing Vehicle Carbon Emissions')
     analysis_type = st.sidebar.selectbox('Select analysis', ('Anomaly Detection', 'Clustering', 'Prediction'))
     return analysis_type
 
@@ -160,7 +152,8 @@ def anomaly_detection(user_data):
         summary = ", ".join([f"{column}: {count}" for column, count in anomaly_count.items()])
         st.success(
     f"""
-    Number of anomalies detected: {len(anomalies)}    
+    Number of anomalies detected: {len(anomalies)}
+        
     Anomalies were detected in the following:
     {summary}
     """
@@ -173,8 +166,7 @@ def clustering(user_data):
     """Function to handle clustering."""
     cluster_model = models.get('cluster')
     if (cluster_model is not None) and (len(user_data) > 0):
-        predictions = cluster_model.fit_predict(user_data)
-        
+        predictions = cluster_model.fit_predict(user_data)   
     # Binning the cluster
         cluster_bin = {
     0:'Low Emission',
